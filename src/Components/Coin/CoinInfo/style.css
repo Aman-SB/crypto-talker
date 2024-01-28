@@ -1,0 +1,29 @@
+.coin-info-heading,.coin-info-desc{
+    padding: 1rem;
+    cursor: pointer;
+}
+.coin-info-heading{
+    color: var(--black);
+}
+.text-over{
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: normal;
+}
+.coin-info-heading{
+    margin-top: .5rem;
+    margin-bottom: 0;
+}
+.coin-info-desc{
+    padding: 0.3rem 1rem;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+.coin-info-desc a{
+    color: var(--black);
+    text-decoration: underline;
+}
+.coin-info-desc a:hover{
+    color: var(--blue);
+}
