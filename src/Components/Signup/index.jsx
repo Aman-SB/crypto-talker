@@ -72,7 +72,7 @@ const Signup = () => {
                                 required: true,
                             })}
                         />
-                        <SplButton type="submit" userData={userData?.name} > Create Account </SplButton>
+                        <SplButton type="submit" > Create Account </SplButton>
                     </div>
                 </form>
             </div>

@@ -6,13 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
-        <>
+        <div style={{ width : "100%" , maxWidth : "120px"}}>
             <ToastContainer />
             <Header />
             <Scroll />
             <Outlet />
             <Footer />
-        </>
+        </div>
     );
 };
 
