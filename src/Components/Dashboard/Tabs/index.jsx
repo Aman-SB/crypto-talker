@@ -43,11 +43,11 @@ export default function TabsComponent({ coins, isWatchlistPage }) {
                 </div>
                 <TabPanel value="grid">
                     <div className="grid-flex">
-                        {coins.map((coin, ind) => {
+                        {coins.map((coin) => {
                             return (
                                 <Grid
                                     coin={coin}
-                                    key={ind}
+                                    key={coin}
                                     isWatchlistPage={isWatchlistPage}
                                 />
                             );

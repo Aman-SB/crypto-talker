@@ -8,6 +8,10 @@
     z-index: 999;
     background-color: var(--backgroundColor);
 }
+.active p{
+    color: var(--blue);
+}
+
 .logo {
     color: var(--blue);
 }

@@ -1,0 +1,66 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.wrapper_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 32rem;
+    background-color: #f0f0f0;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    border: 1px solid;
+}
+
+.logo_container {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.logo_span {
+    display: inline-block;
+    width: 100%;
+    max-width: 100px;
+}
+
+.h2_inside {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.p_text {
+    margin-top: 0.5rem; 
+    text-align: center; 
+    font-size: 1rem; 
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.link_signin {
+    font-weight: 500; 
+    transition: all 0.2s;
+}
+
+.link_signin:hover {
+    text-decoration: underline;
+}
+
+.error_text {
+    color: #dc2626;  
+    margin-top: 2rem; 
+    text-align: center;
+}
+
+.input_container > * {
+    margin-bottom: 1.25rem;  
+}
+
+.input_container > *:last-child {
+    margin-bottom: 0; 
+}

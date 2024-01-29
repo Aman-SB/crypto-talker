@@ -10,7 +10,8 @@ import DashboardPage from "./pages/Dashboard.jsx";
 import CoinPage from "./pages/CoinPage.jsx";
 import WatchlistPage from "./pages/Watchlist.jsx";
 import Signup from "./pages/Signup.jsx";
-
+import { Provider } from "react-redux";
+import store from "./Store/store.js"
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home/>,
+                element: <Home />,
             },
             {
                 path: "/compare",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path: "/watchlist",
                 element: <WatchlistPage />,
             },
+            {
+                path: "/signup",
+                element: <Signup />,
+            },
         ],
     },
 ]);
@@ -44,9 +49,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <ThemeProvider>
-            <RouterProvider router={router}>
-                <App />
-            </RouterProvider>
+            <Provider store={store}>
+                <RouterProvider router={router}>
+                    <App />
+                </RouterProvider>
+            </Provider>
         </ThemeProvider>
     </React.StrictMode>
 );

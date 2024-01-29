@@ -1,57 +1,36 @@
 import React from "react";
-import "./style.css";
+import "./styles.css";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import { Link } from "react-router-dom";
-
+import { WhatsappShareButton } from "react-share";
+import conf from "../../conf";
+import Button from "../Button";
 function Footer() {
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
     return (
-        <>
-            <div className="footer">
-                <h2 className="logo" onClick={() => topFunction()}>
-                    CryptoTracker<span>.</span>
-                </h2>
-                <div className="social-links">
-                    <Link
-                        href="github profile"
-                        target="_blank"
-                    >
-                        <GitHubIcon className="social-link" />
-                    </Link>
-                    <Link href="/" target="_blank">
-                        <FacebookIcon className="social-link" />
-                    </Link>
-                    <Link href="gmail" target="_blank">
-                        <EmailIcon className="social-link" />
-                    </Link>
-                    <Link href="/" target="_blank">
-                        <TwitterIcon className="social-link" />
-                    </Link>
-                    <Link
-                        href="instagram"
-                        target="_blank"
-                    >
-                        <InstagramIcon className="social-link" />
-                    </Link>
-                </div>
+        <div id="footer" className="footer-wrapper">
+            <h1 className="heading">CryptoTalker.</h1>
+            <div className="socials">
+                <a href="www.instagram.com">
+                    <InstagramIcon className="socialIcons" />
+                </a>
+                <a href="www.facebook.com">
+                    <FacebookIcon className="socialIcons" />
+                </a>
+                <a href="www.twitter.com">
+                    <TwitterIcon className="socialIcons" />
+                </a>
+                <a href="mailto: www.instagram.com">
+                    <EmailIcon className="socialIcons" />
+                </a>
+                <WhatsappShareButton url={conf.appUrl}>
+                    <Button text={"Share"} outlined={true} />
+                </WhatsappShareButton>
             </div>
-            <div className="declaration">
-                <div>
-                    <p>@ All Rights reserved: CryptoTracker</p>
-                </div>
-                <div>
-                    <p>Designed and Developed by #SDAS</p>
-                </div>
-            </div>
-        </>
+        </div>
     );
 }
 
 export default Footer;
+

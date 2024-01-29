@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import TemporaryDrawer from "./Drawer";
 import Button from "../Button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CustomizedSwitches from "../ThemeButton";
 import { ThemeProvider } from "../../Context/ThemeContext";
 
@@ -11,9 +11,9 @@ const Header = () => {
         <ThemeProvider>
             <div className="navbar">
                 <div>
-                    <Link to="/">
+                    <Link to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                         <h1 className="logo">
-                            CryptoTracker
+                            CryptoTalker
                             <span style={{ color: "var(--blue)" }}>.</span>
                         </h1>
                     </Link>
@@ -22,23 +22,23 @@ const Header = () => {
                     <div className="container-inside">
                         <CustomizedSwitches />
                         <div className="links">
-                            <Link to="/">
+                            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                                 <p className="link">Home</p>
-                            </Link>
-                            <Link to="/compare">
+                            </NavLink>
+                            <NavLink to="/compare" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                                 <p className="link">Compare</p>
-                            </Link>
-                            <Link to="/watchlist">
+                            </NavLink>
+                            <NavLink to="/watchlist" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                                 <p className="link">Watchlist</p>
-                            </Link>
-                            <Link to="/dashboard">
+                            </NavLink>
+                            <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>
                                 <Button
                                     className="dash"
                                     text={"Dashboard"}
                                     outlined={false}
                                     onClick={() => console.log("btn clicked")}
                                 />
-                            </Link>
+                            </NavLink>
                         </div>
                     </div>
                     <div className="mobile-drawer">

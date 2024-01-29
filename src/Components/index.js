@@ -18,6 +18,10 @@ import Loader from "./Loader";
 import ScrollDiv from "./ScrollDiv";
 import Scroll from "./Scroll";
 import ThemeButton from "./ThemeButton";
+import Signup from "./Signup";
+import Input from "./Input";
+import Logo from "./Logo";
+import AuthLayout from "./Signup/AuthLayout";
 
 export {
     Header,
@@ -40,4 +44,8 @@ export {
     ScrollDiv,
     Scroll,
     ThemeButton,
+    Signup,
+    Input,
+    Logo,
+    AuthLayout,
 };

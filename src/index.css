@@ -13,6 +13,7 @@ html {
     --red: #f94141;
     --whitish: #fff;
     --backgroundColor: #111;
+    --loadingColor : #303030;
 }
 .light-theme {
     --white: #fff;
@@ -24,6 +25,7 @@ html {
     --red: #f94141;
     --whitish: #fff;
     --backgroundColor: #e8f0f9;
+    --loadingColor : #cad5e4;
 }
 body {
     margin: 0;
@@ -50,11 +52,17 @@ a {
     margin: 1.5rem;
     gap: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .coin-days-flex {
+        flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 450px) {
     .coin-days-flex {
         margin: 0.5rem;
         gap: 0.5rem;
-        flex-direction: column;
         align-items: flex-start;
     }
 }
