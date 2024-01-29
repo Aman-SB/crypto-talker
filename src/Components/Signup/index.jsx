@@ -72,7 +72,7 @@ const Signup = () => {
                                 required: true,
                             })}
                         />
-                        <SplButton type="submit" onClick={() => console.log("clicked")} > Create Account </SplButton>
+                        <SplButton type="submit" userData={userData?.name} > Create Account </SplButton>
                     </div>
                 </form>
             </div>

@@ -15,11 +15,9 @@ function WatchlistPage() {
         getData();
     },[myWatchlist])
 
-    console.log(myWatchlist);
     const getData = async () => {
         const allCoins = await get100Coins();
         if (coins) {
-            console.log(coins, "coins ");
             setMyWatchlist(allCoins.filter((item) => coins.includes(item.id)));
         }
         setLoading(false);
