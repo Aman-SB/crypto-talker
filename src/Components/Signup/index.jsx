@@ -2,7 +2,7 @@ import { useState } from "react";
 import authService from "../../Appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../Store/authSlice";
-import { Button, Input, Logo } from "../index";
+import { Input, Logo, SplButton } from "../index";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import styles from "./styles.module.css";
@@ -16,11 +16,12 @@ const Signup = () => {
     const create = async (data) => {
         setError("");
         try {
+            console.log(data);
             const userData = await authService.createAccount(data);
             if (userData) {
                 const currUser = await authService.getCurrentUser();
                 if (currUser) dispatch(login(currUser));
-                navigate("/");
+                navigate("/login");
             }
         } catch (error) {}
     };
@@ -29,9 +30,7 @@ const Signup = () => {
         <div className={styles.wrapper}>
             <div className={styles.wrapper_container}>
                 <div className={styles.logo_container}>
-                    <span className={styles.logo_span}>
-                        <Logo width="100%" />
-                    </span>
+                    <Logo />
                 </div>
                 <h2 className={styles.h2_inside}>Sign up to your account</h2>
                 <p className={styles.p_text}>
@@ -73,10 +72,7 @@ const Signup = () => {
                                 required: true,
                             })}
                         />
-                        <Button type="submit" styles={{ width: "100%" }}>
-                            {" "}
-                            Create Account{" "}
-                        </Button>
+                        <SplButton type="submit" onClick={() => console.log("clicked")} > Create Account </SplButton>
                     </div>
                 </form>
             </div>

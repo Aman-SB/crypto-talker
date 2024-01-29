@@ -1,0 +1,6 @@
+.logo {
+    color: var(--blue);
+    position: absolute;
+    left: -100px;
+    width: 100%;
+}

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login as authLogin } from "../store/authSlice";
-import { Button, Input, Logo } from "./index";
+import { login as authLogin } from "../../Store/authSlice";
+import { Input, Logo, SplButton } from "../index";
 import { useDispatch } from "react-redux";
-import authService from "../appwrite/auth";
+import authService from "../../Appwrite/auth";
 import { useForm } from "react-hook-form";
+import styles from "./styles.module.css";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Login = () => {
             if (session) {
                 const userData = await authService.getCurrentUser();
                 if (userData) dispatch(authLogin(userData));
-                navigate("/");
+                navigate("/home");
             }
         } catch (error) {
             setError(error.message);
@@ -27,32 +28,24 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center w-full">
-            <div
-                className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
-            >
-                <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px]">
-                        <Logo width="100%" />
-                    </span>
+        <div className={styles.container}>
+            <div className={styles.login_box}>
+                <div className={styles.logo_container}>
+                    <Logo />
                 </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">
-                    Sign in to your account
-                </h2>
-                <p className="mt-2 text-center text-base text-black/10">
+                <h2 className={styles.h2_text}>Sign in to your account</h2>
+                <p className={styles.p_text}>
                     Don&apos;t have any account?&nbsp;
-                    <Link
-                        to="/signup"
-                        className="font-medium transition-all duration-200 hover:underline"
-                    >
+                    <Link to="/" className={styles.link}>
                         Sign up
                     </Link>
                 </p>
-                {error && (
-                    <p className="text-red-600 mt-8 text-center">{error}</p>
-                )}
-                <form onSubmit={handleSubmit(login)} className="mt-8">
-                    <div className="space-y-5">
+                {error && <p className={styles.error_text}>{error}</p>}
+                <form
+                    onSubmit={handleSubmit(login)}
+                    style={{ marginTop: "2rem" }}
+                >
+                    <div className={styles.input_container}>
                         <Input
                             label="Email:"
                             placeholder="Enter your email"
@@ -76,9 +69,7 @@ const Login = () => {
                                 required: true,
                             })}
                         />
-                        <Button type="submit" className="w-full">
-                            Sign in
-                        </Button>
+                        <SplButton type="submit">Sign in</SplButton>
                     </div>
                 </form>
             </div>

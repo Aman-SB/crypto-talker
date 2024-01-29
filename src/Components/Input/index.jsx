@@ -14,7 +14,7 @@ const input = forwardRef(
                 <input
                     ref={ref}
                     type={type}
-                    className={styles.input-container}
+                    className={styles.input_container}
                     {...props}
                     id={id}
                 ></input>

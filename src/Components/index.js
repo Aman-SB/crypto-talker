@@ -22,6 +22,8 @@ import Signup from "./Signup";
 import Input from "./Input";
 import Logo from "./Logo";
 import AuthLayout from "./Signup/AuthLayout";
+import Login from './Login';
+import SplButton from './Signup_button';
 
 export {
     Header,
@@ -48,4 +50,6 @@ export {
     Input,
     Logo,
     AuthLayout,
+    Login,
+    SplButton,
 };

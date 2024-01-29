@@ -10,37 +10,71 @@ import DashboardPage from "./pages/Dashboard.jsx";
 import CoinPage from "./pages/CoinPage.jsx";
 import WatchlistPage from "./pages/Watchlist.jsx";
 import Signup from "./pages/Signup.jsx";
+import Login from "./pages/Login.jsx";
 import { Provider } from "react-redux";
-import store from "./Store/store.js"
+import store from "./Store/store.js";
+import { AuthLayout } from "./Components/index.js";
 
 const router = createBrowserRouter([
+    {
+        path: "/",
+        element: (
+            <AuthLayout authentication={false}>
+                <Signup />
+            </AuthLayout>
+        ),
+    },
+    {
+        path: "/login",
+        element: (
+            <AuthLayout authentication={false}>
+                <Login />
+            </AuthLayout>
+        ),
+    },
     {
         path: "/",
         element: <App />,
         children: [
             {
-                path: "/",
-                element: <Home />,
+                path: "/home",
+                element: (
+                    <AuthLayout authentication>
+                        <Home />
+                    </AuthLayout>
+                ),
             },
             {
                 path: "/compare",
-                element: <Compare />,
+                element: (
+                    <AuthLayout authentication>
+                        <Compare />
+                    </AuthLayout>
+                ),
             },
             {
                 path: "/dashboard",
-                element: <DashboardPage />,
+                element: (
+                    <AuthLayout authentication>
+                        <DashboardPage />
+                    </AuthLayout>
+                ),
             },
             {
                 path: "/coin/:id",
-                element: <CoinPage />,
+                element: (
+                    <AuthLayout authentication>
+                        <CoinPage />
+                    </AuthLayout>
+                ),
             },
             {
                 path: "/watchlist",
-                element: <WatchlistPage />,
-            },
-            {
-                path: "/signup",
-                element: <Signup />,
+                element: (
+                    <AuthLayout authentication>
+                        <WatchlistPage />
+                    </AuthLayout>
+                ),
             },
         ],
     },

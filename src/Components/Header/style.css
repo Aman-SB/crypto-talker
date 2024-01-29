@@ -15,6 +15,9 @@
 .logo {
     color: var(--blue);
 }
+.logoutbtn{
+    cursor: pointer;
+}
 .links {
     display: flex;
     justify-content: space-between;
