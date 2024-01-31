@@ -36,7 +36,7 @@ const Login = () => {
                 <h2 className={styles.h2_text}>Sign in to your account</h2>
                 <p className={styles.p_text}>
                     Don&apos;t have any account?&nbsp;
-                    <Link to="/" className={styles.link}>
+                    <Link to="/signup" className={styles.link}>
                         Sign up
                     </Link>
                 </p>

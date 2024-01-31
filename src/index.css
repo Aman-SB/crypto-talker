@@ -36,7 +36,7 @@ body {
 
 a {
     color: var(--white);
-    text-decoration: none;
+    text-decoration: dotted;
 }
 .grey-wrapper {
     display: block;

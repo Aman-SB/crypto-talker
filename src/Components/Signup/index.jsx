@@ -21,7 +21,7 @@ const Signup = () => {
             if (userData) {
                 const currUser = await authService.getCurrentUser();
                 if (currUser) dispatch(login(currUser));
-                navigate("/login");
+                navigate("/signup");
             }
         } catch (error) {}
     };
@@ -35,7 +35,7 @@ const Signup = () => {
                 <h2 className={styles.h2_inside}>Sign up to your account</h2>
                 <p className={styles.p_text}>
                     Already have any account?&nbsp;
-                    <Link to="/login" className={styles.link_signin}>
+                    <Link to="/" className={styles.link_signin}>
                         Sign In
                     </Link>
                 </p>
