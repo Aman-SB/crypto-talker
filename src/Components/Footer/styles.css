@@ -35,8 +35,8 @@
 
 @media only screen and (max-width: 800px) {
   .footer-wrapper {
-    position: absolute;
-    bottom: -100px;
+    position: relative;
+    bottom: -250px;
     width: calc(100vw - 10%);
     flex-direction: column;
     gap: 0.5rem;

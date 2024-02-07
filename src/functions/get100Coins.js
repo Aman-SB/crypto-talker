@@ -8,6 +8,7 @@ export const get100Coins = () => {
     const myCoins = axios
         .get(url)
         .then((response) => {
+            console.log(response.data);
             return response.data;
         })
         .catch((error) => {
